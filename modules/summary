@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# Module name: summary
+# Module description: prints a server greeting with various bits of information.
+
+# Stats:
+#       uptime
+#       server load (1 min average)
+#       logged in users
+#       date
+#       number of processes
+#       hostname
+#	CSF blocked IPs
+
+hostname=`hostname`
+user=`whoami`
+logged_in=`w -h | awk '{ print $1 }' | head -n3`
+num_proc=`ps aux | wc -l`
+server_date=`date`
+est_conn=`lsof -i -n -P | grep "EST" | wc -l`
+kernel=`uname -s -r`
+
+seconds_up=`cat /proc/uptime | awk '{ print $1 }' | cut -d"." -f1`
+
+hms()
+{
+        local S=${1}
+        ((h=S/3600))
+        ((m=S%3600/60))
+        ((s=S%60))
+        printf "%d:%d:%d\n" $h $m $s
+}
+
+uptime=`hms $seconds_up`
+load_ave=`uptime | sed 's/.*load average: //' | awk -F\, '{print $1}'`
+
+if [ -f /etc/csf/csf.deny ] ; then
+	blocked_ips=`cat /etc/csf/csf.deny | egrep -v "^#" | wc -l`
+fi
+
+echo ""
+echo "Welcome to ${bold}${underline}$hostname${normal}, $user."
+echo "You are running $SHELL shell on ${bold}`tail -n1 /etc/redhat-release` `arch`"
+echo ""
+echo "${bold}Running kernel:${normal} $kernel"
+echo "${bold}Uptime:${normal} $uptime"
+echo "${bold}Server date:${normal} $server_date"
+echo "${bold}Process count:${normal} $num_proc"
+echo "${bold}Load average (1 min):${normal} $load_ave"
+echo "${bold}Established connections:${normal} $est_conn"
+[[ -n "$blocked_ips" ]] && echo "${bold}CSF blocked IPs:${normal} $blocked_ips"
+echo -e "${bold}Users logged in:${normal}\n$logged_in"
+echo ""

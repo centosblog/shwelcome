@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Module name: cowsayfortune
+# Module description: prints out fortune in a cowsay bubble :)
+
+check_fortune=`which fortune 2>/dev/null`
+check_cowsay=`which cowsay 2>/dev/null`
+
+if [ -n "${check_fortune}" ] && [ -n "${check_cowsay}" ]; then
+
+	fun  () { fortune fortunes | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n; }
+
+	fun
+
+fi
