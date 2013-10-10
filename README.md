@@ -71,6 +71,19 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
     Add `/opt/shwelcome/shwelcome.sh` to your shell's default profile, eg: `/etc/zshrc` (ZSH)
 
 
+### File Tree
+
+    .
+    ├── includes
+    │   └── includes.sh
+    ├── modules
+    │   ├── cowsayfortune
+    │   ├── summary
+    │   └── taskwarrior
+    ├── README.md
+    └── shwelcome.sh
+
+
 ### Disclaimer
 
 I'm not a programmer, but I do like to make things. Please use this at your own risk.
