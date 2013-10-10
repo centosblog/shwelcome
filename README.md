@@ -56,8 +56,8 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
 
 1. Clone this repo to your preferred directory (eg: /opt)
 
-    `cd /opt
-    git clone https://github.com/centosblog/shwelcome`
+    `cd /opt`
+    `git clone https://github.com/centosblog/shwelcome`
 
 2. Ensure shwelcome/shwelcome.sh is executable
 
