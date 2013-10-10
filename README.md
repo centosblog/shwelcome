@@ -56,20 +56,20 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
 
 1. Clone this repo to your preferred directory (eg: /opt)
 
-    cd /opt
-    git clone https://github.com/centosblog/shwelcome
+    `cd /opt
+    git clone https://github.com/centosblog/shwelcome`
 
 2. Ensure shwelcome/shwelcome.sh is executable
 
-    chmod +x /opt/shwelcome/shwelcome.sh
+    `chmod +x /opt/shwelcome/shwelcome.sh`
 
 3. Individually enable it for your user
 
-Add `/opt/shwelcome/shwelcome.sh` to your profile file, eg: `~/.bash_profile` (BASH) or `~/.zshrc` (ZSH)
+    Add `/opt/shwelcome/shwelcome.sh` to your profile file, eg: `~/.bash_profile` (BASH) or `~/.zshrc` (ZSH)
 
 4. Enable it globally for all users
 
-Add `/opt/shwelcome/shwelcome.sh` to your shell's default profile, eg: `/etc/zshrc` (ZSH)
+    Add `/opt/shwelcome/shwelcome.sh` to your shell's default profile, eg: `/etc/zshrc` (ZSH)
 
 
 ### Disclaimer
