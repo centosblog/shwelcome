@@ -71,6 +71,15 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
     Add `/opt/shwelcome/shwelcome.sh` to your shell's default profile, eg: `/etc/zshrc` (ZSH)
 
 
+### Installation of Dependencies
+
+1. Enable the EPEL repo (http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F)
+
+2. Install fortune, cowsay and taskwarrior:
+
+    `yum install fortune-mod cowsay task`
+
+
 ### File Tree
 
     .
