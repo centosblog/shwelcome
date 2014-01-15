@@ -40,7 +40,7 @@ fi
 
 echo ""
 echo "Welcome to ${bold}${underline}$hostname${normal}, $user."
-echo "You are running $SHELL shell on ${bold}`tail -n1 /etc/redhat-release` `arch`"
+echo "You are running $SHELL shell on ${bold}`head -n1 /etc/redhat-release` `arch`"
 echo ""
 echo "${bold}Running kernel:${normal} $kernel"
 echo "${bold}Uptime:${normal} $uptime"
