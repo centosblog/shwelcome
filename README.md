@@ -73,7 +73,7 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
 
 ### Installation of Dependencies
 
-1. Enable the EPEL repo (http://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F)
+1. Enable the EPEL repo (http://www.centosblog.com/enable-epel-repo-on-centos-5-and-centos-6/)
 
 2. Install fortune, cowsay and taskwarrior:
 
