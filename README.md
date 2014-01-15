@@ -66,7 +66,7 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
 
     Add `/opt/shwelcome/shwelcome.sh` to your profile file, eg: `~/.bash_profile` (BASH) or `~/.zshrc` (ZSH)
 
-4. Enable it globally for all users
+4. (Optional) Enable it globally for all users
 
     Add `/opt/shwelcome/shwelcome.sh` to your shell's default profile, eg: `/etc/zshrc` (ZSH)
 
