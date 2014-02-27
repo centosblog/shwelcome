@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Get the working directory of this script.
-SCRIPT_DIRECTORY=`dirname $0`
+SCRIPT_DIRECTORY=$( dirname $0 )
 
 # Includes file
 . ${SCRIPT_DIRECTORY}/includes/includes.sh
