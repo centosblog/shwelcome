@@ -3,7 +3,7 @@
 # Module name: taskwarrior
 # Module description: displays Taskwarrior tasklist
 
-check_task=`which task 2>/dev/null`
+check_task=$( which task 2>/dev/null )
 
 if [ -n "${check_task}" ]; then
 

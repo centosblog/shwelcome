@@ -12,15 +12,15 @@
 #       hostname
 #	CSF blocked IPs
 
-hostname=`hostname`
-user=`whoami`
-logged_in=`w -h | awk '{ print $1 }' | head -n3`
-num_proc=`ps aux | wc -l`
-server_date=`date`
-est_conn=`lsof -i -n -P | grep "EST" | wc -l`
-kernel=`uname -s -r`
+hostname=$( hostname )
+user=$( whoami )
+logged_in=$( users )
+num_proc=$( ps aux | wc -l )
+server_date=$( date )
+est_conn=$( lsof -i -n -P | grep "EST" | wc -l )
+kernel=$( uname -s -r )
 
-seconds_up=`cat /proc/uptime | awk '{ print $1 }' | cut -d"." -f1`
+seconds_up=$( cat /proc/uptime | awk '{ print $1 }' | cut -d"." -f1 )
 
 hms()
 {
@@ -31,16 +31,16 @@ hms()
         printf "%d:%d:%d\n" $h $m $s
 }
 
-uptime=`hms $seconds_up`
-load_ave=`uptime | sed 's/.*load average: //' | awk -F\, '{print $1}'`
+uptime=$( hms $seconds_up )
+load_ave=$( uptime | sed 's/.*load average: //' | awk -F\, '{print $1}' )
 
 if [ -f /etc/csf/csf.deny ] ; then
-	blocked_ips=`cat /etc/csf/csf.deny | egrep -v "^#" | wc -l`
+	blocked_ips=$( cat /etc/csf/csf.deny | egrep -v "^#" | wc -l )
 fi
 
 echo ""
 echo "Welcome to ${bold}${underline}$hostname${normal}, $user."
-echo "You are running $SHELL shell on ${bold}`head -n1 /etc/redhat-release` `arch`"
+echo "You are running $SHELL shell on ${bold}$( head -n1 /etc/redhat-release ) $( arch )."
 echo ""
 echo "${bold}Running kernel:${normal} $kernel"
 echo "${bold}Uptime:${normal} $uptime"
