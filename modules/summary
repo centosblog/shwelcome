@@ -14,7 +14,7 @@
 
 hostname=$( hostname )
 user=$( whoami )
-logged_in=$( users )
+logged_in=$( users | sed 's/ /\n/g' | uniq -c )
 num_proc=$( ps aux | wc -l )
 server_date=$( date )
 est_conn=$( lsof -i -n -P | grep "EST" | wc -l )

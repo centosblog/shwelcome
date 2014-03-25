@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Output formatting options
-bold=`tput bold`
-normal=`tput sgr0`
-underline=`tput smul`
+bold=$( tput bold )
+normal=$( tput sgr0 )
+underline=$( tput smul )
 
 
 # Loads a module from the modules directory.
