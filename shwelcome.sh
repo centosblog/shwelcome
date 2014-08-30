@@ -15,19 +15,28 @@ function usage {
         echo "    -h print this message"
         echo "    -e exclude modules [moda modb]"
         echo "    -i include modules [modc modd]"
+        echo "    -l list default modules"
         echo ""
 
         exit 1
 }
 
+function modules {
+	echo "Default modules are:"
+	printf -- '	%s\n' "${modules[@]}"
+
+	exit 0
+}
+
 include=0
 exclude=0
 
-while getopts :hei opt; do
+while getopts :hei:l opt; do
         case $opt in
                 h)      usage ;;
                 e)      exclude=$OPTARG ;;
                 i)      include=$OPTARG ;;
+		l)	modules ;;
                 :)      echo "$0: $OPTARG requires a value:"; usage ;;
                 \?)     echo "$0: unknown option $OPTARG"; usage ;;
                 *)      usage ;;
