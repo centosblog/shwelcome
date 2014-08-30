@@ -28,7 +28,7 @@ hms()
         ((h=S/3600))
         ((m=S%3600/60))
         ((s=S%60))
-        printf "%d:%d:%d\n" $h $m $s
+        printf "%dh %dm %ds\n" $h $m $s
 }
 
 uptime=$( hms $seconds_up )

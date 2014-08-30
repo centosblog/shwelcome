@@ -28,7 +28,7 @@ function load_module () {
 
 # Lists current modules then exit
 function modules_list {
-        echo "Default modules are:"
+        echo "Current modules are:"
         printf -- '     %s\n' "${modules[@]}"
 
         exit 0
