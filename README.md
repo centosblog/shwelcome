@@ -80,6 +80,46 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
     `yum install fortune-mod cowsay task`
 
 
+### Custom module
+
+1. Put your script at modules folder
+
+2. Append or prepend your modules
+
+    `./shwelcome.sh -p mymodule`
+
+    `./shwelcome.sh -a mylatermodule`
+
+4. As many as you want
+
+    `./shwelcome.sh -a mymodule -a mysupermodule -p showitfirst -p firstofall`
+
+
+### Exclude modules
+
+    `./shwelcome.sh -e taskwarrior`
+
+
+### List modules
+
+    `./shwelcome.sh -l`
+    
+        Current modules are:
+             summary
+             taskwarrior
+             cowsayfortune
+    
+    `./shwelcome.sh -a mymodule -a mysupermodule -p showitfirst -p firstofall -e taskwarrior -l`
+    
+        Current modules are:
+             firstofall
+             showitfirst
+             summary
+             
+             cowsayfortune
+             mymodule
+             mysupermodule
+
 ### File Tree
 
     .
