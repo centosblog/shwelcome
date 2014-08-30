@@ -21,21 +21,6 @@ function usage {
         exit 1
 }
 
-function modules_list {
-	echo "Default modules are:"
-	printf -- '	%s\n' "${modules[@]}"
-
-	exit 0
-}
-
-function modules_shift() {
-  modules=("$1" "${modules[@]}")
-}
-
-function modules_push() {
-  modules=("${modules[@]}" "$1")
-}
-
 while getopts hla:p: opt; do
         case $opt in
                 h)      usage ;;

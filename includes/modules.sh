@@ -19,3 +19,19 @@ function load_module () {
 	fi
 
 }
+
+function modules_list {
+        echo "Default modules are:"
+        printf -- '     %s\n' "${modules[@]}"
+
+        exit 0
+}
+
+function modules_shift() {
+  modules=("$1" "${modules[@]}")
+}
+
+function modules_push() {
+  modules=("${modules[@]}" "$1")
+}
+
