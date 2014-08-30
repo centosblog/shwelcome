@@ -4,7 +4,7 @@
 SCRIPT_DIRECTORY="$( dirname $0 )"
 
 # Includes file
-. "${SCRIPT_DIRECTORY}/includes/includes.sh"
+. "${SCRIPT_DIRECTORY}/includes/modules.sh"
 
 # Default modules
 modules=("summary" "taskwarrior" "cowsayfortune")
