@@ -13,30 +13,35 @@ modules=("summary" "taskwarrior" "cowsayfortune")
 function usage {
         echo "$0 [options]"
         echo "    -h print this message"
-        echo "    -e exclude modules [moda modb]"
-        echo "    -i include modules [modc modd]"
+        echo "    -p prepend modules [-p modc -p modd]"
+        echo "    -a append modules [-a moda -a modb]"
         echo "    -l list default modules"
         echo ""
 
         exit 1
 }
 
-function modules {
+function modules_list {
 	echo "Default modules are:"
 	printf -- '	%s\n' "${modules[@]}"
 
 	exit 0
 }
 
-include=0
-exclude=0
+function modules_shift() {
+  modules=("$1" "${modules[@]}")
+}
 
-while getopts :hei:l opt; do
+function modules_push() {
+  modules=("${modules[@]}" "$1")
+}
+
+while getopts hla:p: opt; do
         case $opt in
                 h)      usage ;;
-                e)      exclude=$OPTARG ;;
-                i)      include=$OPTARG ;;
-		l)	modules ;;
+                a)      modules_push $OPTARG;;
+                p)      modules_shift $OPTARG ;;
+		l)	modules_list ;;
                 :)      echo "$0: $OPTARG requires a value:"; usage ;;
                 \?)     echo "$0: unknown option $OPTARG"; usage ;;
                 *)      usage ;;
