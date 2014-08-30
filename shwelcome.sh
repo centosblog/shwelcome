@@ -21,6 +21,7 @@ function usage {
         exit 1
 }
 
+# Getting users options
 while getopts hla:p: opt; do
         case $opt in
                 h)      usage ;;
