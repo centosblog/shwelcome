@@ -84,7 +84,7 @@ This has been tested on CentOS 6 and OpenSUSE 12, using both BASH and ZSH shells
 
     .
     ├── includes
-    │   └── includes.sh
+    │   └── modules.sh
     ├── modules
     │   ├── cowsayfortune
     │   ├── summary

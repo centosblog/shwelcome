@@ -22,11 +22,12 @@ function usage {
 }
 
 # Getting users options
-while getopts hla:p: opt; do
+while getopts hla:p:e: opt; do
         case $opt in
                 h)      usage ;;
                 a)      modules_push $OPTARG;;
                 p)      modules_shift $OPTARG ;;
+                e)      modules_exclude $OPTARG ;;
 		l)	modules_list ;;
                 :)      echo "$0: $OPTARG requires a value:"; usage ;;
                 \?)     echo "$0: unknown option $OPTARG"; usage ;;

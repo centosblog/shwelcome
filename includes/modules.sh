@@ -8,7 +8,12 @@ underline=$( tput smul )
 # Loads a module from the modules directory.
 function load_module () {
 
-	local module_name="$1"
+	if [ -e $1 ]
+	then
+		return
+	else
+		local module_name="$1"
+	fi
 
 	module_file="${SCRIPT_DIRECTORY}/modules/${module_name}"
 	
@@ -27,6 +32,11 @@ function modules_list {
         printf -- '     %s\n' "${modules[@]}"
 
         exit 0
+}
+
+# Removes a module from array
+function modules_exclude() {
+        modules=( "${modules[@]/$1}" )
 }
 
 # Adds a module at the begin

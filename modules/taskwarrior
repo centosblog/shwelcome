@@ -6,6 +6,5 @@
 check_task=$( which task 2>/dev/null )
 
 if [ -n "${check_task}" ]; then
-
 	task
 fi
